@@ -3,6 +3,7 @@ id: 587d778b367417b2b2512aa7
 title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
+forumTopicId: 301030
 ---
 
 ## Description
@@ -11,7 +12,21 @@ The next form topic covers accessibility of radio buttons. Each choice is given 
 The <code>fieldset</code> tag surrounds the entire grouping of radio buttons to achieve this. It often uses a <code>legend</code> tag to provide a description for the grouping, which is read by screen readers for each choice in the <code>fieldset</code> element.
 The <code>fieldset</code> wrapper and <code>legend</code> tag are not necessary when the choices are self-explanatory, like a gender selection. Using a <code>label</code> with the <code>for</code> attribute for each radio button is sufficient.
 Here's an example:
-<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Choose one of these three items:&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&lt;/form&gt;<br></blockquote>
+
+```html
+<form>
+  <fieldset>
+    <legend>Choose one of these three items:</legend>
+    <input id="one" type="radio" name="items" value="one">
+    <label for="one">Choice One</label><br>
+    <input id="two" type="radio" name="items" value="two">
+    <label for="two">Choice Two</label><br>
+    <input id="three" type="radio" name="items" value="three">
+    <label for="three">Choice Three</label>
+  </fieldset>
+</form>
+```
+
 </section>
 
 ## Instructions
@@ -25,15 +40,15 @@ Camper Cat wants information about the ninja level of his users when they sign u
 ```yml
 tests:
   - text: Your code should have a <code>fieldset</code> tag around the radio button set.
-    testString: assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');
+    testString: assert($('fieldset').length == 1);
   - text: Make sure your <code>fieldset</code> element has a closing tag.
-    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length);
   - text: Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.
-    testString: assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');
+    testString: assert($('legend').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.
-    testString: assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');
+    testString: assert($('p').length == 4);
 
 ```
 
@@ -144,4 +159,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

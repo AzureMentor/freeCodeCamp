@@ -27,8 +27,6 @@ const jsdom = require('jsdom');
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
-
 const vm = require('vm');
 
 const puppeteer = require('puppeteer');
@@ -40,7 +38,7 @@ const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
 const { challengeTypes } = require('../../client/utils/challengeTypes');
 
-const { supportedLangs } = require('../utils');
+const { testedLangs } = require('../utils');
 
 const {
   buildDOMChallenge,
@@ -83,13 +81,12 @@ let page;
 runTests();
 
 async function runTests() {
-  let testLangs = [...supportedLangs];
-  if (process.env.TEST_CHALLENGES_FOR_LANGS) {
-    const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
-      lang => lang.trim().toLowerCase()
-    );
-    testLangs = testLangs.filter(lang => filterLangs.includes(lang));
-  }
+  process.on('unhandledRejection', err => {
+    spinner.stop();
+    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+  });
+
+  const testLangs = testedLangs();
 
   const challenges = await Promise.all(
     testLangs.map(lang => getChallenges(lang))

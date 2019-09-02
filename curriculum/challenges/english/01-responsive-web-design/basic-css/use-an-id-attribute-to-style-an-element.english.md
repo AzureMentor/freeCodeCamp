@@ -3,6 +3,7 @@ id: bad87dee1348bd9aede07836
 title: Use an id Attribute to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
+forumTopicId: 18339
 ---
 
 ## Description
@@ -10,7 +11,13 @@ videoUrl: 'https://scrimba.com/c/cakyZfL'
 One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.
 However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.
 Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:
-<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>
+
+```css
+#cat-photo-element {
+  background-color: green;
+}
+```
+
 Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.
 </section>
 
@@ -25,13 +32,13 @@ Try giving your form, which now has the <code>id</code> attribute of <code>cat-p
 ```yml
 tests:
   - text: Give your <code>form</code> element the id of <code>cat-photo-form</code>.
-    testString: assert($("form").attr("id") === "cat-photo-form", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');
+    testString: assert($("form").attr("id") === "cat-photo-form");
   - text: Your <code>form</code> element should have the <code>background-color</code> of green.
-    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", 'Your <code>form</code> element should have the <code>background-color</code> of green.');
+    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
   - text: Make sure your <code>form</code> element has an <code>id</code> attribute.
-    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.');
+    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
   - text: Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.
-    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');
+    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 ```
 
@@ -184,4 +191,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

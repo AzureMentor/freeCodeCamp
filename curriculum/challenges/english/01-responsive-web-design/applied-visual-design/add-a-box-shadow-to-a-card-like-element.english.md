@@ -3,6 +3,7 @@ id: 587d781b367417b2b2512abe
 title: Add a box-shadow to a Card-like Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZdUd'
+forumTopicId: 301031
 ---
 
 ## Description
@@ -19,7 +20,11 @@ The <code>box-shadow</code> property takes values for
 The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
 Multiple box-shadows can be created by using commas to separate properties of each <code>box-shadow</code> element.
 Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:
-<blockquote>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</blockquote>
+
+```css
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+```
+
 </section>
 
 ## Instructions
@@ -33,9 +38,9 @@ The element now has an id of <code>thumbnail</code>. With this selector, use the
 ```yml
 tests:
   - text: Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.
-    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), 'Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.');
+    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
   - text: You should use the given CSS for the <code>box-shadow</code> value.
-    testString: assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\)\s*?,\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), 'You should use the given CSS for the <code>box-shadow</code> value.');
+    testString: assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\)\s*?,\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi));
 
 ```
 

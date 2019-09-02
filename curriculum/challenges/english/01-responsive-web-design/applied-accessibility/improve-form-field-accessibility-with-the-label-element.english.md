@@ -3,6 +3,7 @@ id: 587d778a367417b2b2512aa6
 title: Improve Form Field Accessibility with the label Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
+forumTopicId: 301016
 ---
 
 ## Description
@@ -11,7 +12,14 @@ Improving accessibility with semantic HTML markup applies to using both appropri
 The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.
 You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a <code>label</code> element along with the label text in order to make the text clickable. Another way to achieve this is by using the <code>for</code> attribute as explained in this lesson.
 The value of the <code>for</code> attribute must be the same as the value of the <code>id</code> attribute of the form control. Here's an example:
-<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;<br>&nbsp;&nbsp;&lt;input type=&quottext&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;<br>&lt;/form&gt;<br></blockquote>
+
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+</form>
+```
+
 </section>
 
 ## Instructions
@@ -25,9 +33,9 @@ Camper Cat expects a lot of interest in his thoughtful blog posts and wants to i
 ```yml
 tests:
   - text: Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.
-    testString: assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');
+    testString: assert($('label').attr('for'));
   - text: Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.
-    testString: assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');
+    testString: assert($('label').attr('for') == 'email');
 
 ```
 
@@ -116,4 +124,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

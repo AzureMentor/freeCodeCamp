@@ -3,13 +3,22 @@ id: bad87fee1348bd9aecf08806
 title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
+forumTopicId: 18337
 ---
 
 ## Description
 <section id='description'>
 Classes are reusable styles that can be added to HTML elements.
 Here's an example CSS class declaration:
-<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>
+
+```html
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+```
+
 You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.
 You can apply a class to an HTML element like this:
 <code>&#60;h2 class="blue-text"&#62;CatPhotoApp&#60;/h2&#62;</code>
@@ -28,13 +37,13 @@ Give your <code>h2</code> element the <code>class</code> attribute with a value 
 ```yml
 tests:
   - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", 'Your <code>h2</code> element should be red.');
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: assert($("h2").hasClass("red-text"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');
+    testString: assert($("h2").hasClass("red-text"));
   - text: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.
-    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), 'Your stylesheet should declare a <code>red-text</code> class and have its color set to red.');
+    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
   - text: Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.
-    testString: assert($("h2").attr("style") === undefined, 'Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.');
+    testString: assert($("h2").attr("style") === undefined);
 
 ```
 
@@ -133,4 +142,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>
